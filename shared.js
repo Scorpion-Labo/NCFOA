@@ -16,11 +16,19 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ── MOBILE NAV ──
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-if (hamburger) {
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-}
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  }
+});
+
+//const hamburger = document.querySelector('.hamburger');
+//const navLinks = document.querySelector('.nav-links');
+//if (hamburger) {
+//  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+//}
 
 // ── ACTIVE NAV LINK ──
 // Works for both file:// (local) and http(s):// (hosted)
