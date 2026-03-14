@@ -24,12 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-//const hamburger = document.querySelector('.hamburger');
-//const navLinks = document.querySelector('.nav-links');
-//if (hamburger) {
-//  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-//}
-
 // ── ACTIVE NAV LINK ──
 // Works for both file:// (local) and http(s):// (hosted)
 // Removes ALL pre-set active classes, then sets only the one matching the current page
