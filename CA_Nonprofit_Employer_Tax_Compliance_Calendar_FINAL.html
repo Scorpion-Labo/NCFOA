@@ -98,6 +98,47 @@ body {
   font-family: 'Source Sans 3', sans-serif;
 }
 
+
+/* ── YEAR TOGGLE ── */
+.header-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.yr-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+.yr-toggle-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #c9a84c;
+  margin-right: 10px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.yr-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,168,76,0.5);
+  padding: 5px 16px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e8d5a0;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.yr-btn:first-of-type { border-radius: 99px 0 0 99px; border-right: none; }
+.yr-btn:last-of-type  { border-radius: 0 99px 99px 0; }
+.yr-btn.active { background: #c9a84c; color: #0d4f2e; border-color: #c9a84c; font-weight: 700; }
+.yr-btn:hover:not(.active) { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(201,168,76,0.8); }
+
 /* ── NAV TABS ── */
 .nav-wrap {
   background: var(--white);
@@ -364,7 +405,14 @@ body {
   <div class="header-inner">
     <div class="header-eyebrow">California · 501(c)(3) Nonprofit</div>
     <h1 class="header-title">Employer Tax Compliance Calendar</h1>
-    <div class="header-sub">Payroll taxes · employee reporting · benefit plan filings &nbsp;|&nbsp; Tax Year: 2025 filing in 2026</div>
+    <div class="header-sub header-sub-row">
+      <span>Payroll taxes · employee reporting · benefit plan filings &nbsp;|&nbsp; <span class="yr-val" data-2025="Tax Year: 2025 filing in 2026" data-2026="Tax Year: 2026 filing in 2027">Tax Year: 2025 filing in 2026</span></span>
+      <div class="yr-toggle">
+        <span class="yr-toggle-label">Tax Year:</span>
+        <button class="yr-btn active" data-yr="2025" onclick="setYear('2025')">2025</button>
+        <button class="yr-btn"        data-yr="2026" onclick="setYear('2026')">2026</button>
+      </div>
+    </div>
     <div class="header-meta">
       <span class="meta-pill">📅 Monthly</span>
       <span class="meta-pill">📊 Quarterly</span>
@@ -383,11 +431,13 @@ body {
     <button class="nav-tab"        data-tab="quarterly"  onclick="switchTab('quarterly')">  📊 Quarterly  <span class="nav-badge">3</span></button>
     <button class="nav-tab"        data-tab="annual"     onclick="switchTab('annual')">     📋 Annual     <span class="nav-badge">7</span></button>
     <button class="nav-tab"        data-tab="newhire"    onclick="switchTab('newhire')">    🏛️ New Hire   <span class="nav-badge">1</span></button>
-    <button class="nav-tab"        data-tab="components" onclick="switchTab('components')"> ⚙️ Tax Components <span class="nav-badge">8</span></button>
+    <button class="nav-tab"        data-tab="components" onclick="switchTab('components')"> ⚙️ Tax Components <span class="nav-badge">9</span></button>
     <button class="nav-tab"        data-tab="nonprofitfilings" onclick="switchTab('nonprofitfilings')"> 📑 Nonprofit Filings <span class="nav-badge">3</span></button>
     <button class="nav-tab"        data-tab="timeline"   onclick="switchTab('timeline')">   🗓️ Timeline   <span class="nav-badge">6</span></button>
     <button class="nav-tab"        data-tab="riskflags"        onclick="switchTab('riskflags')">        ⚠️ Risk Flags        <span class="nav-badge">6</span></button>
     <button class="nav-tab"        data-tab="matrix"           onclick="switchTab('matrix')">           👥 Responsibility Matrix <span class="nav-badge">3</span></button>
+    <button class="nav-tab"        data-tab="yearcompare"      onclick="switchTab('yearcompare')">      📊 2025 vs 2026          <span class="nav-badge">7</span></button>
+
   </div>
 </div>
 
@@ -612,7 +662,7 @@ body {
     <table class="tbl">
       <colgroup><col style="width:28%"/><col style="width:22%"/><col style="width:22%"/><col style="width:28%"/></colgroup>
       <thead class="tbl-head">
-        <tr><th>Tax / Component</th><th>Paid By</th><th>2025 Rate / Wage Base</th><th>Notes</th></tr>
+        <tr><th>Tax / Component</th><th>Paid By</th><th><span class="yr-val" data-2025="2025 Rate / Wage Base" data-2026="2026 Rate / Wage Base">2025 Rate / Wage Base</span></th><th>Notes</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -624,7 +674,7 @@ body {
         <tr class="alt">
           <td><div class="filing-name">Social Security Tax</div></td>
           <td><span class="notes-text">Employer + Employee (6.2% each)</span></td>
-          <td><div class="due-date" style="font-size:12px">Wage base: $176,100</div></td>
+          <td><div class="due-date" style="font-size:12px"><span class="yr-val" data-2025="Wage base: $176,100" data-2026="Wage base: $184,500">Wage base: $176,100</span></div></td>
           <td><span class="notes-text">Combined rate 12.4%; split equally between employer and employee. Tax stops at the wage base per employee per year.</span></td>
         </tr>
         <tr>
@@ -648,8 +698,14 @@ body {
         <tr class="alt">
           <td><div class="filing-name">CA State Disability Insurance (SDI)</div></td>
           <td><span class="notes-text">Employee (withheld by employer)</span></td>
-          <td><div class="due-date" style="font-size:12px">1.2% (2025 rate; subject to annual adjustment — no wage ceiling as of 2024+)</div></td>
+          <td><div class="due-date" style="font-size:12px"><span class="yr-val" data-2025="1.2% (2025 rate · subject to annual EDD adjustment · no wage ceiling)" data-2026="1.3% (2026 rate · subject to annual EDD adjustment · no wage ceiling)">1.2% (2025 rate · subject to annual EDD adjustment · no wage ceiling)</span></div></td>
           <td><span class="notes-text">No wage cap as of 2024. Withheld from employee pay; employer collects and remits to EDD with other payroll deposits.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Retirement Plan Deferral Limits</div><div class="filing-sub">401(k) / 403(b)</div></td>
+          <td><span class="notes-text">Employee (elective deferral)</span></td>
+          <td><div class="due-date" style="font-size:12px"><span class="yr-val" data-2025="Employee limit: $23,500 · Catch-up (50+): $7,500 · Catch-up (60–63): $11,250" data-2026="Employee limit: $24,500 · Catch-up (50+): $8,000 · Catch-up (60–63): $11,250">Employee limit: $23,500 · Catch-up (50+): $7,500 · Catch-up (60–63): $11,250</span></div></td>
+          <td><span class="notes-text">IRS elective deferral limit; adjusted annually for inflation. Higher catch-up limits for age 60–63 apply under SECURE 2.0. Employer contributions are separate and do not count toward the employee limit.</span></td>
         </tr>
         <tr>
           <td><div class="filing-name">CA Personal Income Tax (PIT)</div></td>
@@ -832,7 +888,7 @@ body {
         <tr class="alt">
           <td><div class="filing-name">Late Form 5500</div><div class="filing-sub">Benefit plan annual report</div></td>
           <td><span class="agency-pill ag-dolfed">IRS / DOL ERISA §502(c)(2)</span></td>
-          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$250/day · max $150K</span><br><span style="font-size:10px;color:var(--muted);">DOL: up to $2,586/day</span></div></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$250/day · max $150K</span><br><span style="font-size:10px;color:var(--muted);"><span class="yr-val" data-2025="DOL: up to $2,586/day" data-2026="DOL: up to $2,739/day">DOL: up to $2,586/day</span></span></div></td>
           <td><span class="notes-text">IRS and DOL penalties run separately. Delinquent Filer Voluntary Compliance Program (DFVCP) reduces penalties significantly if filed proactively.</span></td>
         </tr>
         <tr>
@@ -977,6 +1033,78 @@ body {
   </div>
 </div>
 
+<!-- ════════════════════════════════════════════════════════════
+     2025 vs 2026 COMPARISON
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-yearcompare">
+  <div class="section-card">
+    <div class="section-title">
+      📊 2025 vs 2026 — What Changed
+      <span class="count">7 ITEMS · CONFIRMED CHANGES ONLY</span>
+    </div>
+    <table class="tbl">
+      <colgroup>
+        <col style="width:30%;"/><col style="width:22%;"/><col style="width:22%;"/><col style="width:26%;"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr><th>Item</th><th>2025 (filing in 2026)</th><th>2026 (filing in 2027)</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Social Security Wage Base</div><div class="filing-sub">Form 941 · FICA employer match</div></td>
+          <td><div class="due-date">$176,100</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$184,500</div></td>
+          <td><span class="notes-text">+$8,400 increase. Higher wage base means higher employer SS tax cost for employees earning above the 2025 cap. Rate (6.2% each) unchanged.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">401(k) / 403(b) Employee Deferral Limit</div><div class="filing-sub">Retirement plan contributions</div></td>
+          <td><div class="due-date">$23,500</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$24,500</div></td>
+          <td><span class="notes-text">+$1,000 increase. Adjusted annually by IRS for inflation. Applies to employee elective deferrals only; employer contributions are separate.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Catch-Up Contribution (Age 50+)</div><div class="filing-sub">401(k) / 403(b) additional deferral</div></td>
+          <td><div class="due-date">$7,500</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$8,000</div></td>
+          <td><span class="notes-text">+$500 increase. Age 60–63 super catch-up (SECURE 2.0) remains $11,250 — unchanged for 2026.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">CA SDI Withholding Rate</div><div class="filing-sub">CA State Disability Insurance · DE 88</div></td>
+          <td><div class="due-date">1.2%</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">1.3%</div></td>
+          <td><span class="notes-text">+0.1% annual increase. No wage ceiling as of 2024. Subject to annual EDD adjustment each year. Withheld from employee pay.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">DOL Form 5500 Daily Penalty</div><div class="filing-sub">Late benefit plan annual report</div></td>
+          <td><div class="due-date">$2,586/day</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$2,739/day</div></td>
+          <td><span class="notes-text">+$153/day DOL inflation adjustment. IRS penalty ($250/day · max $150K) unchanged. DFVCP voluntary correction program still available.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">CA PIT Next-Day Deposit Trigger</div><div class="filing-sub">CA EDD DE 88 payroll deposit</div></td>
+          <td><div class="due-date">$500</div></td>
+          <td><div class="due-date">$500</div></td>
+          <td><span class="notes-text">No confirmed change for 2026. Threshold remains $500 accumulated PIT → next business day deposit.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">1099-NEC Reporting Threshold</div><div class="filing-sub">Independent contractor payments</div></td>
+          <td><div class="due-date">$600</div></td>
+          <td><div class="due-date">$600</div></td>
+          <td><span class="notes-text">No confirmed change for 1099-NEC. Threshold remains $600. (Note: 1099-K has a separate phased threshold — not applicable here.)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This comparison reflects confirmed changes between the 2025 and 2026 tax years as of March 2026. Rates and limits are subject to further adjustment. Always verify current figures with a qualified CPA or the relevant agency before filing. This table does not constitute legal or tax advice.</p>
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations under IRC §3306(c)(8). Unchanged for both years.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Rev. Proc. 2025-67 · IRS Notice 2025-82 · CA EDD 2026 Rate Schedule · DOL EBSA 2026 Penalty Adjustments · IRS Pub. 509 (2026)</div>
+  </div>
+</div>
+
 </div><!-- /main -->
 
 <!-- FOOTER -->
@@ -994,6 +1122,20 @@ function switchTab(tab) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
   document.getElementById('panel-' + tab).classList.add('active');
+}
+
+function setYear(yr) {
+  document.querySelectorAll('.yr-val').forEach(el => {
+    const val = el.dataset[yr];
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll('.yr-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.yr === yr);
+  });
+  const compTitle = document.querySelector('#panel-components .section-title .count');
+  if (compTitle) {
+    compTitle.textContent = yr === '2025' ? '9 ITEMS · 2025 RATES' : '9 ITEMS · 2026 RATES';
+  }
 }
 </script>
 </body>
