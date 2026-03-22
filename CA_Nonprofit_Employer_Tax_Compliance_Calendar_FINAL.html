@@ -234,6 +234,10 @@ body {
 .ag-ssa    { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
 .ag-dol    { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
 .ag-plan   { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.ag-ag     { background: #f0f9ff; color: #0c4a6e; border: 1px solid #7dd3fc; }
+.ag-sos    { background: #fdf4ff; color: #701a75; border: 1px solid #e879f9; }
+.ag-cairc  { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.ag-dolfed { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
 .ag-exempt { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
 
 .due-date {
@@ -379,7 +383,10 @@ body {
     <button class="nav-tab"        data-tab="annual"     onclick="switchTab('annual')">     📋 Annual     <span class="nav-badge">7</span></button>
     <button class="nav-tab"        data-tab="newhire"    onclick="switchTab('newhire')">    🏛️ New Hire   <span class="nav-badge">1</span></button>
     <button class="nav-tab"        data-tab="components" onclick="switchTab('components')"> ⚙️ Tax Components <span class="nav-badge">8</span></button>
+    <button class="nav-tab"        data-tab="nonprofitfilings" onclick="switchTab('nonprofitfilings')"> 📑 Nonprofit Filings <span class="nav-badge">3</span></button>
     <button class="nav-tab"        data-tab="timeline"   onclick="switchTab('timeline')">   🗓️ Timeline   <span class="nav-badge">6</span></button>
+    <button class="nav-tab"        data-tab="riskflags"        onclick="switchTab('riskflags')">        ⚠️ Risk Flags        <span class="nav-badge">6</span></button>
+    <button class="nav-tab"        data-tab="matrix"           onclick="switchTab('matrix')">           👥 Responsibility Matrix <span class="nav-badge">3</span></button>
   </div>
 </div>
 
@@ -429,6 +436,8 @@ body {
     <div class="disclaimer-body">
       <p>This calendar is a general reference guide for California 501(c)(3) nonprofit employers as of March 2026. It covers employer-related payroll tax filings only and does not include general nonprofit filings such as Form 990 or charitable solicitation registrations.</p>
       <p>Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or nonprofit employment tax attorney before relying on this document. Deadlines assume a December 31 fiscal year end. This document does not constitute legal or tax advice.</p>
+    
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from the Federal Unemployment Tax Act (FUTA) under IRC §3306(c)(8).</p>
     </div>
     <div class="disclaimer-sources">Sources: IRS IRC §3306(c)(8) · IRS Pub. 509 (2026) · IRS Form 941 Instructions · IRS Forms 1094-C/1095-C Instructions (2025) · CA EDD Employer Guide · IRS Form 5500 Corner · DOL ERISA §104 · IRS Topic 758 · IRS Topic 759</div>
   </div>
@@ -475,6 +484,8 @@ body {
     <div class="disclaimer-body">
       <p>This calendar is a general reference guide for California 501(c)(3) nonprofit employers as of March 2026. It covers employer-related payroll tax filings only and does not include general nonprofit filings such as Form 990 or charitable solicitation registrations.</p>
       <p>Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or nonprofit employment tax attorney before relying on this document. Deadlines assume a December 31 fiscal year end. This document does not constitute legal or tax advice.</p>
+    
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from the Federal Unemployment Tax Act (FUTA) under IRC §3306(c)(8).</p>
     </div>
     <div class="disclaimer-sources">Sources: IRS IRC §3306(c)(8) · IRS Pub. 509 (2026) · IRS Form 941 Instructions · IRS Forms 1094-C/1095-C Instructions (2025) · CA EDD Employer Guide · IRS Form 5500 Corner · DOL ERISA §104 · IRS Topic 758 · IRS Topic 759</div>
   </div>
@@ -546,6 +557,8 @@ body {
       <p>This calendar is a general reference guide for California 501(c)(3) nonprofit employers as of March 2026. It covers employer-related payroll tax filings only and does not include general nonprofit filings such as Form 990 or charitable solicitation registrations.</p>
       <p>Key applicability notes: ACA Forms 1094-C and 1095-C apply only to Applicable Large Employers (ALEs) with 50 or more full-time equivalent employees. Form 5500 is required for ERISA-covered plans meeting participant thresholds only.</p>
       <p>Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or nonprofit employment tax attorney before relying on this document. This document does not constitute legal or tax advice.</p>
+    
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from the Federal Unemployment Tax Act (FUTA) under IRC §3306(c)(8).</p>
     </div>
     <div class="disclaimer-sources">Sources: IRS IRC §3306(c)(8) · IRS Pub. 509 (2026) · IRS Form 941 Instructions · IRS Forms 1094-C/1095-C Instructions (2025) · CA EDD Employer Guide · IRS Form 5500 Corner · DOL ERISA §104 · IRS Topic 758 · IRS Topic 759</div>
   </div>
@@ -579,6 +592,8 @@ body {
     <div class="disclaimer-title">⚠️ Disclaimer</div>
     <div class="disclaimer-body">
       <p>This calendar is a general reference guide for California 501(c)(3) nonprofit employers as of March 2026. Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or nonprofit employment tax attorney before relying on this document. This document does not constitute legal or tax advice.</p>
+    
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from the Federal Unemployment Tax Act (FUTA) under IRC §3306(c)(8).</p>
     </div>
     <div class="disclaimer-sources">Sources: CA EDD Employer Guide · IRS IRC §3306(c)(8) · IRS Pub. 509 (2026)</div>
   </div>
@@ -657,6 +672,8 @@ body {
     <div class="disclaimer-title">⚠️ Disclaimer</div>
     <div class="disclaimer-body">
       <p>This calendar is a general reference guide for California 501(c)(3) nonprofit employers as of March 2026. Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or nonprofit employment tax attorney before relying on this document. This document does not constitute legal or tax advice.</p>
+    
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from the Federal Unemployment Tax Act (FUTA) under IRC §3306(c)(8).</p>
     </div>
     <div class="disclaimer-sources">Sources: IRS IRC §3306(c)(8) · IRS Pub. 509 (2026) · IRS Form 941 Instructions · CA EDD Employer Guide</div>
   </div>
@@ -734,6 +751,228 @@ body {
       <p>Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or nonprofit employment tax attorney before relying on this document. Deadlines assume a December 31 fiscal year end. This document does not constitute legal or tax advice.</p>
     </div>
     <div class="disclaimer-sources">Sources: IRS IRC §3306(c)(8) · IRS Pub. 509 (2026) · IRS Form 941 Instructions · IRS Forms 1094-C/1095-C Instructions (2025) · CA EDD Employer Guide · IRS Form 5500 Corner · DOL ERISA §104 · IRS Topic 758 · IRS Topic 759</div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     NONPROFIT FILINGS
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-nonprofitfilings">
+  <div class="section-card">
+    <div class="section-title">
+      📑 Nonprofit Organizational Filings
+      <span class="count">3 ITEMS · ANNUAL</span>
+    </div>
+    <table class="tbl">
+      <colgroup>
+        <col class="col-filing"/><col class="col-agency"/>
+        <col class="col-due"/><col class="col-notes"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr><th>Form / Filing</th><th>Filed With</th><th>Due Date</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Form 990 / 990-EZ / 990-N</div><div class="filing-sub">Annual Information Return</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">15th day of 5th month after fiscal year end<br><span style="font-size:10px;color:var(--muted);">e.g., May 15 for Dec 31 FYE · 6-month extension via Form 8868</span></div></td>
+          <td><span class="notes-text">990-N (e-Postcard) for gross receipts ≤$50K · 990-EZ up to $200K · Full 990 over $200K or assets over $500K · Public document. 3 consecutive missed years = automatic tax-exempt revocation.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">CA RRF-1</div><div class="filing-sub">Registry of Charitable Trusts Annual Report</div></td>
+          <td><span class="agency-pill ag-ag">CA Attorney General</span></td>
+          <td><div class="due-date">4.5 months after fiscal year end<br><span style="font-size:10px;color:var(--muted);">e.g., April 30 for Dec 31 FYE · Extension mirrors Form 990 extension</span></div></td>
+          <td><span class="notes-text">Required for orgs registered with CA AG · Must attach IRS Form 990 · Filing fee based on gross revenue · File at oag.ca.gov/charities · Late filing may result in suspension of registration.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">CA Statement of Information (SI-100)</div><div class="filing-sub">Biennial Corporate Filing</div></td>
+          <td><span class="agency-pill ag-sos">CA Secretary of State</span></td>
+          <td><div class="due-date">Biennially<br><span style="font-size:10px;color:var(--muted);">By end of month of initial registration anniversary</span></div></td>
+          <td><span class="notes-text">Required for all CA nonprofit corporations · $20 filing fee · File at bizfile.sos.ca.gov · Failure to file may result in suspension of corporate status.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This section covers key organizational filings for California 501(c)(3) nonprofits. Due dates may vary based on fiscal year end and applicable extensions. Always confirm current requirements with a qualified CPA or nonprofit attorney.</p>
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from the Federal Unemployment Tax Act (FUTA) under IRC §3306(c)(8).</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Pub. 557 · CA AG Registry (oag.ca.gov/charities) · CA Secretary of State · IRS Form 8868 Instructions</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     RISK FLAGS
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-riskflags">
+  <div class="section-card">
+    <div class="section-title">
+      ⚠️ Risk Flags — Penalty Reference
+      <span class="count">6 ITEMS · GENERAL REFERENCE ONLY</span>
+    </div>
+    <table class="tbl">
+      <colgroup>
+        <col class="col-filing"/><col class="col-agency"/>
+        <col class="col-due"/><col class="col-notes"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr><th>Trigger</th><th>Authority</th><th>Penalty</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Late Form 941</div><div class="filing-sub">Payroll taxes not deposited on time</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §6672</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">TFRP — 100%</span><br><span style="font-size:10px;color:var(--muted);">of unpaid trust fund taxes · no cap</span></div></td>
+          <td><span class="notes-text">Trust Fund Recovery Penalty. Personally assessed against responsible officers and directors. One of the most severe IRS penalties.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Late Form 5500</div><div class="filing-sub">Benefit plan annual report</div></td>
+          <td><span class="agency-pill ag-dolfed">IRS / DOL ERISA §502(c)(2)</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$250/day · max $150K</span><br><span style="font-size:10px;color:var(--muted);">DOL: up to $2,586/day</span></div></td>
+          <td><span class="notes-text">IRS and DOL penalties run separately. Delinquent Filer Voluntary Compliance Program (DFVCP) reduces penalties significantly if filed proactively.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Late / Missing Form 990</div><div class="filing-sub">Annual information return</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §6652(c)</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$20/day · max $10,500</span><br><span style="font-size:10px;color:var(--muted);">Large orgs: $100/day · max $52,000</span></div></td>
+          <td><span class="notes-text">3 consecutive years of non-filing = automatic revocation of tax-exempt status. Reinstatement requires a new IRS application.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Late W-2 / 1099 Filing</div><div class="filing-sub">Year-end information returns</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §6721–6722</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$60–$630 per form</span><br><span style="font-size:10px;color:var(--muted);">depending on days late</span></div></td>
+          <td><span class="notes-text">Separate penalties for failure to furnish to recipient vs. failure to file with IRS. Intentional disregard: $630+ per form, no cap.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Late CA DE 9 / DE 9C</div><div class="filing-sub">EDD quarterly returns</div></td>
+          <td><span class="agency-pill ag-edd">CA UI Code §1132</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">15% of unpaid taxes</span><br><span style="font-size:10px;color:var(--muted);">+ 1.5%/month interest</span></div></td>
+          <td><span class="notes-text">CA EDD enforces aggressively. Failure to register as employer: additional $1,000+ penalty.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Late CA RRF-1</div><div class="filing-sub">Registry of Charitable Trusts</div></td>
+          <td><span class="agency-pill ag-ag">CA Gov Code §12586</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">Registration suspended</span><br><span style="font-size:10px;color:var(--muted);">Cannot solicit donations in CA</span></div></td>
+          <td><span class="notes-text">Suspension prevents all fundraising activities in California. Reinstatement requires filing all delinquent reports and payment of fees.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>Penalty amounts are subject to change and may be adjusted annually for inflation. This table is a general reference only. Always consult a qualified CPA, enrolled agent, or tax attorney for advice specific to your organization.</p>
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations. These organizations are exempt from FUTA under IRC §3306(c)(8).</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS IRC §6672 · IRS IRC §6652 · DOL ERISA §502(c)(2) · CA UI Code §1132 · CA Gov Code §12586 · IRS Pub. 509 (2026)</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     RESPONSIBILITY MATRIX
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-matrix">
+  <div class="section-card">
+    <div class="section-title">
+      👥 Responsibility Matrix
+      <span class="count">9 FILINGS · CUSTOMIZE TO YOUR ORG</span>
+    </div>
+    <table class="tbl" style="table-layout:fixed;">
+      <colgroup>
+        <col style="width:28%;"/><col style="width:13%;"/><col style="width:13%;"/><col style="width:13%;"/><col style="width:33%;"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr>
+          <th>Filing / Task</th>
+          <th style="text-align:center;">Payroll Provider</th>
+          <th style="text-align:center;">Internal Finance</th>
+          <th style="text-align:center;">External CPA</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Form 941</div><div class="filing-sub">Federal payroll tax deposit &amp; filing</div></td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td><span class="notes-text">Payroll provider files; internal finance reviews for accuracy; CPA reviews annually</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">CA DE 9 / DE 9C</div><div class="filing-sub">EDD quarterly returns</div></td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td><span class="notes-text">Payroll provider submits; internal finance confirms EDD account in good standing</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">W-2 / W-3</div><div class="filing-sub">Year-end employee wages</div></td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td><span class="notes-text">Payroll provider generates and files; internal finance verifies totals match GL</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">1099-NEC</div><div class="filing-sub">Independent contractor reporting</div></td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td><span class="notes-text">Internal finance tracks vendor payments; CPA reviews W-9s and prepares/files 1099s</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Form 5500</div><div class="filing-sub">Benefit plan annual report</div></td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td><span class="notes-text">CPA or plan administrator prepares; internal finance provides data; review before filing</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">ACA Forms 1094-C / 1095-C</div><div class="filing-sub">ALEs only — 50+ FTEs</div></td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td><span class="notes-text">HR/payroll provider provides data; CPA reviews and files; only required for applicable large employers</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Form 990</div><div class="filing-sub">Annual information return</div></td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td><span class="notes-text">CPA prepares; internal finance provides financials, program data, and officer info; board approves</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">CA RRF-1</div><div class="filing-sub">Registry of Charitable Trusts</div></td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td style="text-align:center;color:#c9a84c;font-weight:700;font-size:18px;">◐</td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td><span class="notes-text">CPA prepares alongside Form 990; internal finance coordinates submission and fee payment</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">CA Statement of Information (SI-100)</div><div class="filing-sub">Biennial corporate filing</div></td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td style="text-align:center;color:#166534;font-weight:700;font-size:18px;">●</td>
+          <td style="text-align:center;color:var(--muted);font-size:18px;">○</td>
+          <td><span class="notes-text">Internal finance or executive director files directly with CA Secretary of State; low complexity</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="background:var(--xblue);border-radius:8px;padding:14px 18px;margin-top:16px;font-size:12px;color:var(--muted);line-height:1.7;">
+      <strong style="color:var(--navy);">Legend:</strong> &nbsp;
+      <span style="color:#166534;font-weight:700;font-size:15px;">●</span> Primary Responsibility &nbsp;|&nbsp;
+      <span style="color:#c9a84c;font-weight:700;font-size:15px;">◐</span> Supporting Role &nbsp;|&nbsp;
+      <span style="color:var(--muted);font-size:15px;">○</span> Not Typically Involved
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This matrix reflects common responsibility structures for California 501(c)(3) nonprofits. Actual responsibilities depend on your organization's size, structure, and service agreements with your payroll provider, CPA, and staff. Review and customize this matrix with your advisors.</p>
+      <p><strong>Form 940 (FUTA):</strong> Not required for 501(c)(3) nonprofit organizations under IRC §3306(c)(8).</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Pub. 509 (2026) · CA EDD Employer Guide · IRS IRC §3306(c)(8) · Nonprofit CFO Advisory best practices</div>
   </div>
 </div>
 
