@@ -1,2 +1,2 @@
 # NCFOA
-NP CFO Advisory
+Nonprofit CFO Advisory
