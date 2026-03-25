@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We've Moved | Nonprofit CFO Advisory</title>
+
+  <!-- SEO: tell search engines the new canonical home -->
+  <link rel="canonical" href="https://www.npcfoadvisory.com/" />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Auto-redirect after 6 seconds -->
+  <meta http-equiv="refresh" content="6;url=https://www.npcfoadvisory.com/" />
+
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f7f9;
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 600px;
+      width: 100%;
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+
+    /* ── Logo / brand bar ── */
+    .brand {
+      display: inline-block;
+      background: #1a4a7a;       /* deep navy */
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Icon ── */
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #1a4a7a;
+    }
+
+    /* ── Heading ── */
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a4a7a;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    /* ── Body copy ── */
+    p {
+      font-size: 1.05rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .new-domain {
+      font-weight: 700;
+      color: #1a4a7a;
+    }
+
+    /* ── Countdown ── */
+    .countdown-wrap {
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #718096;
+    }
+
+    #counter {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1a4a7a;
+      background: #eaf1fb;
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+      border-radius: 50%;
+      text-align: center;
+      margin: 0 0.3rem;
+      vertical-align: middle;
+    }
+
+    /* ── Progress bar ── */
+    .progress-track {
+      background: #e2e8f0;
+      border-radius: 99px;
+      height: 6px;
+      overflow: hidden;
+      margin: 0.5rem 0 1.5rem;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #1a4a7a;
+      border-radius: 99px;
+      width: 0%;
+      animation: drain 6s linear forwards;
+    }
+    @keyframes drain {
+      from { width: 100%; }
+      to   { width: 0%; }
+    }
+
+    /* ── CTA Button ── */
+    .btn {
+      display: inline-block;
+      background: #1a4a7a;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      transition: background 0.2s ease, transform 0.1s ease;
+      margin-top: 0.5rem;
+    }
+    .btn:hover {
+      background: #14395f;
+      transform: translateY(-1px);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* ── Bookmark reminder ── */
+    .reminder {
+      margin-top: 1.75rem;
+      font-size: 0.875rem;
+      color: #a0aec0;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.25rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #a0aec0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="brand">Nonprofit CFO Advisory</div>
+
+    <div class="icon">🏠</div>
+
+    <h1>We've Moved to a New Home!</h1>
+
+    <p>
+      Our website has a new address. You can now find us at<br />
+      <span class="new-domain">www.NPCFOAdvisory.com</span>
+    </p>
+
+    <p>
+      We're redirecting you automatically in just a moment — or click the button below to go there now.
+    </p>
+
+    <!-- Countdown -->
+    <div class="countdown-wrap">
+      Redirecting in <span id="counter">6</span> seconds&hellip;
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+
+    <!-- Manual CTA -->
+    <a class="btn" href="https://www.npcfoadvisory.com/">
+      Go to NPCFOAdvisory.com &rarr;
+    </a>
+
+    <div class="reminder">
+      📌 Please update your bookmarks to <strong>www.NPCFOAdvisory.com</strong>
+    </div>
+
+  </div>
+
+  <footer>&copy; 2026 Nonprofit CFO Advisory &nbsp;|&nbsp; All rights reserved</footer>
+
+  <!-- Countdown script -->
+  <script>
+    let seconds = 6;
+    const counter = document.getElementById('counter');
+
+    const tick = setInterval(() => {
+      seconds--;
+      counter.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(tick);
+        window.location.href = 'https://www.npcfoadvisory.com/';
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
